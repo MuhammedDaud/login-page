@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glassmorphism Login Page</title>
+
+  <style>
+    /* Reset CSS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Background Styling */
+    body {
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+    }
+
+    /* Rain Effect */
+    .rain-background::before {
+      content: "";
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      top: -50%;
+      left: -50%;
+      background: url('https://i.imgur.com/Z4K1QdK.png') repeat;
+      animation: rain 2s linear infinite;
+      opacity: 0.2;
+      filter: blur(2px);
+    }
+
+    /* Keyframes for the Rain */
+    @keyframes rain {
+      0% { background-position: 0 0; }
+      100% { background-position: 0 200px; }
+    }
+
+    /* Glassmorphism Card */
+    .glass-card {
+      width: 350px;
+      padding: 40px;
+      backdrop-filter: blur(15px) brightness(1.2);
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      color: white;
+      z-index: 1;
+    }
+
+    /* Form Elements */
+    .glass-card input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      outline: none;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+    }
+
+    .glass-card input::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .glass-card button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      background: linear-gradient(45deg, #6a11cb, #2575fc);
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .glass-card button:hover {
+      background: linear-gradient(45deg, #2575fc, #6a11cb);
+    }
+
+    .glass-card a {
+      color: #80d4ff;
+      text-decoration: none;
+    }
+
+    .glass-card a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="rain-background">
+    <div class="glass-card">
+      <h2>Login</h2>
+      <form>
+        <input type="text" placeholder="Username" required />
+        <input type="password" placeholder="Password" required />
+        <button type="submit">Sign In</button>
+        <p>Don't have an account? <a href="#">Register</a></p>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
